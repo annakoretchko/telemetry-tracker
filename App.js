@@ -11,6 +11,7 @@ import {
     Easing,
 } from 'react-native';
 import { sendEvent } from './api';
+import EventGraph from './EventGraph';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
@@ -104,6 +105,7 @@ export default function App() {
                 ListEmptyComponent={<Text style={styles.empty}>No events tracked yet.</Text>}
                 contentContainerStyle={events.length === 0 && { flex: 1, justifyContent: 'center' }}
             />
+            <EventGraph events={events} />
         </SafeAreaView>
     );
 }
