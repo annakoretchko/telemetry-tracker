@@ -1,5 +1,5 @@
 // strava.js
-const STRAVA_ACCESS_TOKEN = '';
+const STRAVA_ACCESS_TOKEN = 'c4a537b73c99945aa6f2a784a5afc9e1c5c53dd7';
 
 export async function getStravaActivities({ before, after, page = 1, perPage = 30 } = {}) {
     try {
