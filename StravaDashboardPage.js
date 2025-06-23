@@ -23,6 +23,10 @@ function formatDistance(meters) {
     return miles.toFixed(1) + ' mi';
 }
 
+function formatHeartRate(hr) {
+    return hr.toFixed(0) + ' hr';
+}
+
 export default function StravaDashboard() {
     const [loading, setLoading] = useState(true);
     const [activities, setActivities] = useState([]);
@@ -109,7 +113,7 @@ export default function StravaDashboard() {
                     <View style={styles.activityItem}>
                         <Text style={styles.activityName}>{item.name} - {item.type}</Text>
                         <Text style={styles.activityDetails}>
-                            {new Date(item.start_date).toLocaleDateString()} | {formatDistance(item.distance)} | {formatDuration(item.moving_time)}
+                            {new Date(item.start_date).toLocaleDateString()} | {formatDistance(item.distance)} | {formatHeartRate(item.average_heartrate)} | {formatDuration(item.moving_time) }
                         </Text>
                     </View>
                 )}
